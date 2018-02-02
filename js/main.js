@@ -10,5 +10,13 @@ var chart = c3.generate({
   data: {
     x: 'ROAST TIME',
     columns: data
+  },
+  grid: {
+    x: {
+      show: true
+    },
+    y: {
+      show: true
+    }
   }
 });
