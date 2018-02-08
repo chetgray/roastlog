@@ -21,7 +21,7 @@ var chart = c3.generate({
   },
   grid: {
     x: {
-      show: true
+      lines: (function(){var a = []; for (i = 0; i <= 1200; i += 60) {a.push({value: i, class: 'c3-grid c3-xgrid'})}; return a;})()
     },
     y: {
       show: true
