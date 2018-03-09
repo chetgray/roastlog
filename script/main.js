@@ -1,5 +1,5 @@
 $(function(){
-  $("#main-tabs").tabs();
+  $(".tabs-container").tabs();
 });
 
 var roastData = [
