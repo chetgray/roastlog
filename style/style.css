@@ -13,6 +13,19 @@ body {
 #site-header {
   font-family: 'Roboto Slab', serif;
   font-variant: small-caps;
+  font-size: 3em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#site-logo {
+  max-width: 3em;
+}
+
+#site-header h1 {
+  margin: .33em 0;
 }
 
 /*
