@@ -55,6 +55,11 @@ body {
   flex-shrink: 1;
 }
 
+/* hackily fix #1 */
+#roast-chart {
+  display: flex;
+}
+
 #site-footer {
   flex-shrink: 0;
   padding: 20px;
