@@ -15,6 +15,11 @@ body {
   font-variant: small-caps;
 }
 
+/* hackily fix #1 */
+.ui-tabs-panel .c3 {
+  display: flex;
+}
+
 /*
   Media query breakpoints from Skeleton (http://getskeleton.com/#queries)
 */
