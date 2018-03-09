@@ -32,7 +32,17 @@
 
     <main>
       <section id="search">
-        Search functionality goes here.
+        <form>
+          <div class="flex-container">
+            <select list="search-types">
+            <datalist id="search-types">
+              <option>Roast date</option>
+              <option>Green coffee</option>
+            </datalist>
+            <input type="text">
+            <button type="submit">Search</button>
+          </div>
+        </form>
       </section>
 
       <section id="roast">
