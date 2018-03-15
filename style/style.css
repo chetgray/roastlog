@@ -2,12 +2,21 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 .flex-container {
   display: flex;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+
+  /* flex for  sticky footer (https://css-tricks.com/couple-takes-sticky-footer/) */
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
 }
 
 #site-header {
@@ -18,6 +27,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
 #site-logo {
@@ -26,6 +37,18 @@ body {
 
 #site-header h1 {
   margin: .33em 0;
+}
+
+#site-content {
+  /* expand to fill */
+  flex: 1 0 auto;
+  padding: 20px;
+}
+
+#site-footer {
+  flex-shrink: 0;
+  padding: 20px;
+  text-align: right;
 }
 
 /*
