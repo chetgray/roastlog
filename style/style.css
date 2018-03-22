@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#site-header {
+  font-family: 'Roboto Slab', serif;
+  font-variant: small-caps;
+}
