@@ -42,8 +42,14 @@ function loadRoast(roast) {
   });
 }
 
+function roastTitle(roast) {
+  return roast.date + ' #' + roast.batch + ' ' + roast.coffee;
+}
+
 $resultsList.on('click', 'a', function(event){
-  loadRoast(roastData[this.hash.substr(1)]);
+  let roast = roastData[this.hash.substr(1)];
+  $('#roast-header').text(roastTitle(roast));
+  loadRoast(roast);
   event.preventDefault();
 });
 
@@ -58,8 +64,7 @@ $.getJSON('script/roastData.json', function(data){
       let field = $searchField.val();
       let q = $searchQuery.val().trim().toLowerCase();
       if (field === 'ALL' || (q && roast[field].toLowerCase().includes(q))) {
-        $resultsList.append('<li><a href=#'+i+'>'+
-                            roast.date+' #'+roast.batch+' '+roast.coffee+'</a></li>');
+        $resultsList.append('<li><a href=#'+i+'>'+roastTitle(roast)+'</a></li>');
       }
     });
     event.preventDefault();
