@@ -3,6 +3,7 @@ var $searchForm = $('#search');
 var $searchField = $('#search-field');
 var $searchQuery = $('#search-query');
 var $submitBtn = $('#search-submit');
+var $resultsList = $("#results");
 
 // Generate list for 60-second tick marks
 var xTicks = [];
@@ -47,11 +48,13 @@ $.getJSON('script/roastData.json', function(data){
   roastData = data;
 
   $searchForm.submit(function(event){
+    $resultsList.empty();
     $.each(roastData, function(i, roast){
       let field = $searchField.val();
       let q = $searchQuery.val().trim().toLowerCase();
       if (field === 'ALL' || (q && roast[field].toLowerCase().includes(q))) {
-        // Print roast result
+        $resultsList.append('<li><a href=#'+i+'>'+
+                            roast.date+' #'+roast.batch+' '+roast.coffee+'</a></li>');
       }
     });
     event.preventDefault();
