@@ -21,36 +21,38 @@
       <h1>Roast Log</h1>
     </header>
 
-    <nav id="site-nav">
-      <ul>
-        <li><a href="#search">Search</a>
-        <li><a href="#roast">Roast</a>
-      </ul>
-    </nav>
+    <div id="site-content">
+      <nav id="site-nav">
+        <ul>
+          <li><a href="#search">Search</a>
+          <li><a href="#roast">Roast</a>
+        </ul>
+      </nav>
 
-    <main>
-      <section id="search">
-        <form>
-          <div class="flex-container">
-            <select list="search-types">
-            <datalist id="search-types">
-              <option>Roast date</option>
-              <option>Green coffee</option>
-            </datalist>
-            <input type="text">
-            <button type="submit">Search</button>
+      <main>
+        <section id="search">
+          <form>
+            <div class="flex-container">
+              <select list="search-types">
+              <datalist id="search-types">
+                <option>Roast date</option>
+                <option>Green coffee</option>
+              </datalist>
+              <input type="text">
+              <button type="submit">Search</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="roast">
+          <h2>ETY 2018-01-25</h2>
+          <div id="roast-data">
+            Roast data goes here.
           </div>
-        </form>
-      </section>
-
-      <section id="roast">
-        <h2>ETY 2018-01-25</h2>
-        <div id="roast-data">
-          Roast data goes here.
-        </div>
-        <div id="roast-chart"></div>
-      </section>
-    </main>
+          <div id="roast-chart"></div>
+        </section>
+      </main>
+    </div> <!-- #site-content -->
 
     <footer id="site-footer">
       <small>&copy; copyright 2018, Chet Gray</small>
