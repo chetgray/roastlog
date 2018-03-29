@@ -34,13 +34,13 @@
         <section id="search">
           <form>
             <div class="flex-container">
-              <select list="search-types">
-              <datalist id="search-types">
-                <option>Roast date</option>
-                <option>Green coffee</option>
-              </datalist>
-              <input type="text">
-              <button type="submit">Search</button>
+              <select id="search-field" name="field">
+                <option value="ALL">-- List All --</option>
+                <option value="date">Roast date</option>
+                <option value="coffee">Coffee</option>
+              </select>
+              <input type="search" id="search-query" name="q" placeholder="Query...">
+              <button type="submit" id="search-submit">Search</button>
             </div>
           </form>
         </section>

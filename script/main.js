@@ -1,5 +1,5 @@
 var roastData = {};
-var $submitBtn = $('#search button[type="submit"]');
+var $submitBtn = $('#search-submit');
 
 // Generate list for 60-second tick marks
 var xTicks = [];
