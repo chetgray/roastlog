@@ -42,6 +42,11 @@ function loadRoast(roast) {
   });
 }
 
+$resultsList.on('click', 'a', function(event){
+  loadRoast(roastData[this.hash.substr(1)]);
+  event.preventDefault();
+});
+
 // Load roast data JSON
 $submitBtn.prop('disabled', true).text("Loading...");
 $.getJSON('script/roastData.json', function(data){
