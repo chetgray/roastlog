@@ -1,3 +1,5 @@
+var roastData = {};
+
 // Generate list for 60-second tick marks
 var xTicks = [];
 for (i = 0; i <= 1200; i += 60) {
@@ -28,6 +30,13 @@ var roastChart = c3.generate({
   }
 }); // c3.generate
 
+function loadRoast(roast) {
+  roastChart.load({
+    unload: true,
+    json: roast.data
+  });
+}
+
 // Disable button until roast data loads
 var $submitBtn = $('#search button[type="submit"]')
   .prop('disabled', true)
@@ -36,10 +45,7 @@ var $submitBtn = $('#search button[type="submit"]')
 $.getJSON('script/roastData.json', function(data){
   $submitBtn.prop('disabled', false).text("Search");
 
-  var roastData = data;
+  roastData = data;
 
-  roastChart.load({
-    unload: true,
-    json: roastData[0].data
-  });
+  loadRoast(roastData[0]);
 }); // getJSON
