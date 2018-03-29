@@ -1,4 +1,7 @@
 var roastData = {};
+var $searchForm = $('#search');
+var $searchField = $('#search-field');
+var $searchQuery = $('#search-query');
 var $submitBtn = $('#search-submit');
 
 // Generate list for 60-second tick marks
@@ -41,7 +44,18 @@ function loadRoast(roast) {
 // Load roast data JSON
 $submitBtn.prop('disabled', true).text("Loading...");
 $.getJSON('script/roastData.json', function(data){
-  $submitBtn.prop('disabled', false).text("Search");
   roastData = data;
-  loadRoast(roastData[0]);
+
+  $searchForm.submit(function(event){
+    $.each(roastData, function(i, roast){
+      let field = $searchField.val();
+      let q = $searchQuery.val().trim().toLowerCase();
+      if (field === 'ALL' || (q && roast[field].toLowerCase().includes(q))) {
+        // Print roast result
+      }
+    });
+    event.preventDefault();
+  }); // $searchForm.submit
+
+  $submitBtn.prop('disabled', false).text("Search");
 }); // getJSON
