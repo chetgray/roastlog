@@ -14,11 +14,13 @@ var roastMetadata = {
   "postcrackDuration": timedeltaParse("0:0")
 };
 
+// Generate list for 60-second tick marks
 var xTicks = [];
 for (i = 0; i <= 1200; i += 60) {
   xTicks.push(i);
 }
 
+// Create the chart
 var roastChart = c3.generate({
   bindto: '#roast-chart',
   data: {
@@ -40,4 +42,4 @@ var roastChart = c3.generate({
       show: true
     }
   }
-});
+}); // c3.generate
