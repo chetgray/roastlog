@@ -1,4 +1,5 @@
 var roastData = {};
+var $submitBtn = $('#search button[type="submit"]');
 
 // Generate list for 60-second tick marks
 var xTicks = [];
@@ -37,15 +38,10 @@ function loadRoast(roast) {
   });
 }
 
-// Disable button until roast data loads
-var $submitBtn = $('#search button[type="submit"]')
-  .prop('disabled', true)
-  .text("Loading...");
 // Load roast data JSON
+$submitBtn.prop('disabled', true).text("Loading...");
 $.getJSON('script/roastData.json', function(data){
   $submitBtn.prop('disabled', false).text("Search");
-
   roastData = data;
-
   loadRoast(roastData[0]);
 }); // getJSON
