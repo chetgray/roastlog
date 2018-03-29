@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
     <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="stylesheet" href="style/tabs.css" type="text/css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
@@ -22,45 +23,44 @@
       <h1>Roast Log</h1>
     </header>
 
-    <div id="site-content">
-      <nav id="site-nav">
+    <main id="site-content" class="tabs-container">
+      <nav id="site-nav" class="tabs">
         <ul>
-          <li><a href="#search">Search</a>
+          <li><a href="#search" class="active">Search</a>
           <li><a href="#roast">Roast</a>
         </ul>
       </nav>
 
-      <main>
-        <section id="search">
-          <form>
-            <div class="flex-container">
-              <select id="search-field" name="field">
-                <option value="ALL">-- List All --</option>
-                <option value="date">Roast date</option>
-                <option value="coffee">Coffee</option>
-              </select>
-              <input type="search" id="search-query" name="q" placeholder="Query...">
-              <button type="submit" id="search-submit">Search</button>
-            </div>
-          </form>
-          <ul id="results">
-          </ul>
-        </section>
-
-        <section id="roast">
-          <h2 id="roast-header"></h2>
-          <div id="roast-data">
-            Roast data goes here.
+      <section id="search" class="active">
+        <form>
+          <div class="flex-container">
+            <select id="search-field" name="field">
+              <option value="ALL">-- List All --</option>
+              <option value="date">Roast date</option>
+              <option value="coffee">Coffee</option>
+            </select>
+            <input type="search" id="search-query" name="q" placeholder="Query...">
+            <button type="submit" id="search-submit">Search</button>
           </div>
-          <div id="roast-chart"></div>
-        </section>
-      </main>
-    </div> <!-- #site-content -->
+        </form>
+        <ul id="results">
+        </ul>
+      </section>
+
+      <section id="roast">
+        <h2 id="roast-header"></h2>
+        <div id="roast-data">
+          Roast data goes here.
+        </div>
+        <div id="roast-chart"></div>
+      </section>
+    </main> <!-- #site-content -->
 
     <footer id="site-footer">
       <small>&copy; copyright 2018, Chet Gray</small>
     </footer>
 
+    <script src="script/tabs.js"></script>
     <script src="script/main.js"></script>
   </body>
 </html>

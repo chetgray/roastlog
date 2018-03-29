@@ -1,0 +1,78 @@
+/*
+Adapted from https://css-tricks.com/transformer-tabs/
+*/
+
+.tabs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid white;
+}
+.tabs li {
+  display: inline-block;
+  padding: 0;
+  vertical-align: bottom;
+}
+.tabs a {
+  display: inline-block;
+/*
+  color: white;
+*/
+  text-decoration: none;
+  padding: 0.5rem;
+}
+.tabs a.active {
+  border-bottom: 3px solid transparent;
+  position: relative;
+  bottom: -3px;
+}
+
+@media (max-width: 549px) {
+  .tabs ul {
+    border-bottom: 0;
+    overflow: hidden;
+    position: relative;
+    background: white;
+/*
+    background: linear-gradient(#666, #222);
+*/
+  }
+  .tabs ul::after {
+    content: "☰"; /* "Three Line Menu Navicon" shows up */
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .tabs li {
+    display: block; /* One link per "row" */
+  }
+  .tabs a {
+    position: absolute; /* Stack links on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .tabs a.active {
+    border: 0;
+    z-index: 1; /* Active tab is on top */
+    background: white;
+/*
+    background: linear-gradient(#666, #222);
+*/
+  }
+  .tabs ul.open a {
+    position: relative;
+    display: block;
+  }
+}
+
+.tabs-container > section {
+  display: none;
+  padding: 1rem;
+}
+.tabs-container > section.active {
+  display: block;
+}
