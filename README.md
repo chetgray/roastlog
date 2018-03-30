@@ -59,6 +59,9 @@ handler for minor form styling. Inside is stuff that tries to access
 the parsed JSON: handling the actual search and then clicking on
 results.
 
+Plotting is via [C3.js][], a wrapper for [D3.js][]. It's mostly declarative,
+with dynamic loading done functionally. Mmmm, libraries.
+
 ## The Future
 
 I intend to improve on this to the point I can use it in my work in
@@ -70,3 +73,5 @@ can use it as a motivator for practice.
 [roastlog live]: http://www.chetgray.com/roastlog/
 [roastlog git]: https://github.com/chetgray/roastlog.git
 [master zip]: https://github.com/chetgray/roastlog/archive/master.zip
+[C3.js]: http://c3js.org/
+[D3.js]: https://d3js.org/
