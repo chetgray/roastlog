@@ -22,9 +22,6 @@ var Tabs = {
     // activate correct div (visually)
     div.addClass('active').siblings().removeClass('active');
 
-    // update URL, no history addition
-    window.history.replaceState('', '', hash);
-
     // Close menu, in case in dropdown state
     anchor.closest('ul').removeClass('open');
   },
