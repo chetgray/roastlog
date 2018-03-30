@@ -4,6 +4,10 @@
 
 html {
   height: 100%;
+
+  font-family: 'Roboto', sans-serif;
+  /* Fluidly shift root font-size from 14px on small phones to 22px on large screens */
+  font-size: calc(87.5% + 8 * (100vw - 320px) / 1120);
 }
 
 /* TODO avoid non-semantic styling-only classes */
@@ -12,8 +16,6 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-
   /* flex for  sticky footer (https://css-tricks.com/couple-takes-sticky-footer/) */
   display: flex;
   flex-direction: column;
@@ -22,8 +24,7 @@ body {
 
 #site-header {
   font-family: 'Roboto Slab', serif;
-  font-variant: small-caps;
-  font-size: 3em;
+  font-size: 1.5rem;
 
   display: flex;
   align-items: center;
@@ -44,6 +45,14 @@ body {
   /* expand to fill */
   flex: 1 0 auto;
   padding: 20px;
+}
+
+#search form .flex-container {
+  justify-content: center;
+}
+
+#search-query {
+  flex-shrink: 1;
 }
 
 #site-footer {
