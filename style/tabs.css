@@ -2,6 +2,14 @@
 Adapted from https://css-tricks.com/transformer-tabs/
 */
 
+.tabs-container > section {
+  display: none; /* Hide sections by default */
+  padding: 1rem;
+}
+.tabs-container > section.active {
+  display: block; /* Display active section */
+}
+
 .tabs ul {
   list-style: none;
   padding: 0;
@@ -66,12 +74,4 @@ Adapted from https://css-tricks.com/transformer-tabs/
   .tabs ul.open a.active {
     border-bottom-color: white
   }
-}
-
-.tabs-container > section {
-  display: none;
-  padding: 1rem;
-}
-.tabs-container > section.active {
-  display: block;
 }

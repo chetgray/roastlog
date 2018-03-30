@@ -35,6 +35,7 @@ var roastChart = c3.generate({
   }
 }); // c3.generate
 
+// Plot a roast
 function loadRoast(roast) {
   roastChart.load({
     unload: true,
@@ -42,10 +43,13 @@ function loadRoast(roast) {
   });
 }
 
+// Put together an identifying string for a roast
 function roastTitle(roast) {
   return roast.date + ' #' + roast.batch + ' ' + roast.coffee;
 }
 
+// Disable query input when "All" is selected in the dropdown
+// and renable it when something else is selected
 $searchField.change(function(){
   if ($searchField.val() === 'ALL') {
     $searchQuery.prop('disabled', true);
@@ -54,19 +58,22 @@ $searchField.change(function(){
   };
 })
 
+// Delegated listener for clicking on search results to plot
 $resultsList.on('click', 'a', function(event){
   let roast = roastData[this.hash.substr(1)];
   $('#roast-header').text(roastTitle(roast));
   loadRoast(roast);
-  Tabs.changeTab('#roast');
+  Tabs.changeTab('#roast'); // Go to the roast chart tab
   event.preventDefault();
 });
 
 // Load roast data JSON
-$submitBtn.prop('disabled', true).text("Loading...");
+$submitBtn.prop('disabled', true).text("Loading..."); // If it takes a while
 $.getJSON('script/roastData.json', function(data){
   roastData = data;
 
+  // When a search is submitted, iterate through the list of roasts
+  // and print out matches
   $searchForm.submit(function(event){
     $resultsList.empty();
     $.each(roastData, function(i, roast){
