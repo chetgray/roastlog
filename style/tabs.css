@@ -27,7 +27,7 @@ Adapted from https://css-tricks.com/transformer-tabs/
   bottom: -3px;
 }
 
-@media (max-width: 549px) {
+@media (max-width: 399px) {
   .tabs ul {
     border-bottom: 0;
     overflow: hidden;
