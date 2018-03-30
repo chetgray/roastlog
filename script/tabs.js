@@ -1,14 +1,6 @@
 //~ Adapted from https://css-tricks.com/transformer-tabs/
 
 var Tabs = {
-  init: function() {
-    this.bindUIfunctions();
-    this.pageLoadCorrectTab();
-  },
-
-  bindUIfunctions: function() {
-  },
-
   changeTab: function(hash) {
     // find the link based on that hash
     var anchor = $('[href="' + hash + '"]');
@@ -26,15 +18,10 @@ var Tabs = {
     anchor.closest('ul').removeClass('open');
   },
 
-  pageLoadCorrectTab: function() {
-  },
-
   toggleMobileMenu: function(event, el) {
     $(el).closest('ul').toggleClass('open');
   }
 };
-
-Tabs.init();
 
 $('.tabs')
   .on('click', 'a[href^="#"]:not(".active")', function(event){
