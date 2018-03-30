@@ -58,6 +58,7 @@ $resultsList.on('click', 'a', function(event){
   let roast = roastData[this.hash.substr(1)];
   $('#roast-header').text(roastTitle(roast));
   loadRoast(roast);
+  Tabs.changeTab('#roast');
   event.preventDefault();
 });
 
