@@ -2,14 +2,23 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+
+  font-family: 'Roboto', sans-serif;
+  /* Fluidly shift root font-size from 14px on small phones to 22px on large screens */
+  font-size: calc(87.5% + 8 * (100vw - 320px) / 1120);
+}
+
 .flex-container {
   display: flex;
 }
 
-html {
-  font-family: 'Roboto', sans-serif;
-  /* Fluidly shift root font-size from 14px on small phones to 22px on large screens */
-  font-size: calc(87.5% + 8 * (100vw - 320px) / 1120);
+body {
+  /* flex for  sticky footer (https://css-tricks.com/couple-takes-sticky-footer/) */
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
 }
 
 #site-header {
@@ -19,6 +28,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
 #site-logo {
@@ -27,6 +38,18 @@ html {
 
 #site-header h1 {
   margin: .33em 0;
+}
+
+#site-content {
+  /* expand to fill */
+  flex: 1 0 auto;
+  padding: 20px;
+}
+
+#site-footer {
+  flex-shrink: 0;
+  padding: 20px;
+  text-align: right;
 }
 
 /*
