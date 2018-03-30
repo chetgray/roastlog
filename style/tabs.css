@@ -6,7 +6,7 @@ Adapted from https://css-tricks.com/transformer-tabs/
   list-style: none;
   padding: 0;
   margin: 0;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid dimgray;
 }
 .tabs li {
   display: inline-block;
@@ -15,32 +15,32 @@ Adapted from https://css-tricks.com/transformer-tabs/
 }
 .tabs a {
   display: inline-block;
-/*
-  color: white;
-*/
+  border: 1px solid dimgray;
+  border-radius: 6px 6px 0 0;
+  border-bottom-color: transparent;
   text-decoration: none;
   padding: 0.5rem;
 }
 .tabs a.active {
-  border-bottom: 3px solid transparent;
+  border-bottom: 3px solid white;
   position: relative;
   bottom: -3px;
 }
 
+/* Switch to accordion menu on small screens */
 @media (max-width: 399px) {
   .tabs ul {
-    border-bottom: 0;
+    border-bottom: 3px solid transparent;
     overflow: hidden;
     position: relative;
-    background: white;
-/*
-    background: linear-gradient(#666, #222);
-*/
+  }
+  .tabs ul.open {
+    border-bottom-color: dimgray;
   }
   .tabs ul::after {
     content: "☰"; /* "Three Line Menu Navicon" shows up */
     position: absolute;
-    top: 8px;
+    top: 11px;
     right: 15px;
     z-index: 2;
     pointer-events: none;
@@ -50,22 +50,21 @@ Adapted from https://css-tricks.com/transformer-tabs/
   }
   .tabs a {
     position: absolute; /* Stack links on top of each other */
-    top: 0;
+    top: 3px;
     left: 0;
     width: 100%;
     height: 100%;
   }
   .tabs a.active {
-    border: 0;
     z-index: 1; /* Active tab is on top */
     background: white;
-/*
-    background: linear-gradient(#666, #222);
-*/
   }
   .tabs ul.open a {
     position: relative;
     display: block;
+  }
+  .tabs ul.open a.active {
+    border-bottom-color: white
   }
 }
 
