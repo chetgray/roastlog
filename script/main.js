@@ -58,15 +58,6 @@ $searchField.change(function(){
   };
 })
 
-// Delegated listener for clicking on search results to plot
-$resultsList.on('click', 'a', function(event){
-  let roast = roastData[this.hash.substr(1)];
-  $('#roast-header').text(roastTitle(roast));
-  loadRoast(roast);
-  Tabs.changeTab('#roast'); // Go to the roast chart tab
-  event.preventDefault();
-});
-
 // Load roast data JSON
 $submitBtn.prop('disabled', true).text("Loading..."); // If it takes a while
 $.getJSON('script/roastData.json', function(data){
@@ -85,6 +76,15 @@ $.getJSON('script/roastData.json', function(data){
     });
     event.preventDefault();
   }); // $searchForm.submit
+
+  // Delegated listener for clicking on search results to plot
+  $resultsList.on('click', 'a', function(event){
+    let roast = roastData[this.hash.substr(1)];
+    $('#roast-header').text(roastTitle(roast));
+    loadRoast(roast);
+    Tabs.changeTab('#roast'); // Go to the roast chart tab
+    event.preventDefault();
+  }); // $resultsList.click
 
   $submitBtn.prop('disabled', false).text("Search");
 }); // getJSON

@@ -54,10 +54,10 @@ In `script/main.js`, we use AJAX to bring in a JSON file with a bunch
 of roast log data, and the file is really divided into what's inside
 versus outside of that callback. Outside is stuff that doesn't directly
 depend on the JSON: initializing the chart, defining functions to load
-data into the chart and put together title strings, and setting
-handlers for minor form styling and for clicking on results. Inside is
-stuff that tries to access the parsed JSON: really just handling the
-actual search.
+data into the chart and put together title strings, and setting a
+handler for minor form styling. Inside is stuff that tries to access
+the parsed JSON: handling the actual search and then clicking on
+results.
 
 ## The Future
 
