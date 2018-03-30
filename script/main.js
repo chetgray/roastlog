@@ -46,6 +46,14 @@ function roastTitle(roast) {
   return roast.date + ' #' + roast.batch + ' ' + roast.coffee;
 }
 
+$searchField.change(function(){
+  if ($searchField.val() === 'ALL') {
+    $searchQuery.prop('disabled', true);
+  } else {
+    $searchQuery.prop('disabled', false);
+  };
+})
+
 $resultsList.on('click', 'a', function(event){
   let roast = roastData[this.hash.substr(1)];
   $('#roast-header').text(roastTitle(roast));
