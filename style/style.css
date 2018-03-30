@@ -46,6 +46,14 @@ body {
   padding: 20px;
 }
 
+#search form .flex-container {
+  justify-content: center;
+}
+
+#search-query {
+  flex-shrink: 1;
+}
+
 #site-footer {
   flex-shrink: 0;
   padding: 20px;
